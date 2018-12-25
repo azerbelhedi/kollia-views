@@ -9,10 +9,14 @@
 </head>
 <body>
     <center>
-        <h1 id = "title">kollia board</h1>
-        <h1 id = "views">views : loading</h1>
-        <h1 id = "files">files : loading</h1>
-        <h1 id = "users">users : loading</h1>
+        <h1 id = "title" onclick = "refresh()">kollia board </h1>
+        <img  onclick = "refresh()" id = "logo" src = "kollia2.png">   
+        <div class = "stats">
+            <h1 id = "views">views : loading</h1>
+            <h1 id = "files">files : loading</h1>
+            <h1 id = "users">users : loading</h1>
+        </div>
+        
         <button id = "usersButton" onclick = "switchDisplay()">loading users</button>
     </center>
     <br>

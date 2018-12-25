@@ -18,6 +18,10 @@ let usersFiles = [] ;
 let database = firebase.database() ;
 let ref = database.ref('views') ;
 
+const refresh = () => {
+    location.reload() ;
+}
+
 const switchDisplay = () => {
     let state = document.querySelector("#usersButton").innerHTML ;
     if(state == "show users"){
@@ -37,7 +41,7 @@ const writeData = () => {
     users.map(x =>{
         document.querySelector("#names").innerHTML += ("<br>" +  x) ;
     }) ;
-    document.querySelector("#filesList").innerHTML = "nbr of files <hr>" ;
+    document.querySelector("#filesList").innerHTML = "files <hr>" ;
     usersFiles.map(y =>{
         document.querySelector("#filesList").innerHTML += ("<br>" +  y) ;
     }) ;

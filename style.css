@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Questrial|Ropa+Sans');
+
+*{
+    margin :0;
+    padding:0;
+}
 .sides{
     display : flex ;
     background-color: #4d848d ;
@@ -8,13 +14,61 @@
 }
 
 #names{
-    width :50%;
+    width :85%;
+    font-family: 'Bree Serif', serif;
+    padding-left: 10px ;
 }
 
 #filesList{
-    width :50%;
+    width :15%;
+    font-family: 'Bree Serif', serif;
 }
 
 body{
     background-color: #34656d ;
+}
+
+#title{
+    background-color: #1c3a3f ;
+    position:fixed;
+    z-index: 10;
+    width: 100%;
+    height:60px;
+    font-family: 'Bree Serif', serif;
+    color: white ;
+    text-shadow: 2px 2px 3px black ;
+    top: 0px;
+    font-weight: bolder ;
+    padding-top: 5px ;
+}
+
+.stats{
+    margin-top:80px;
+}
+
+.stats h1{
+    font-family: 'Bree Serif', serif;
+    color: white ;
+    text-shadow: 2px 2px 3px black ;
+    font-size: 30px ;
+}
+
+#usersButton{
+    background-color :#1c3a3f;
+    color :white;
+    border: none ;
+    width: 50% ;
+    height :32px;
+    font-weight: bold ;
+    font-family: 'Bree Serif', serif;
+    box-shadow: 2px 2px 5px black ;
+}
+
+#logo{
+    width: 50px ;
+    height :60px;
+    position: fixed;
+    top: 0 ;
+    right :10px;
+    z-index: 11;
 }
