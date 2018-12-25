@@ -46,7 +46,7 @@ body{
     margin-top:80px;
 }
 
-.stats h1{
+.stats h1 , h2{
     font-family: 'Bree Serif', serif;
     color: white ;
     text-shadow: 2px 2px 3px black ;

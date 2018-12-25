@@ -14,6 +14,17 @@ firebase.initializeApp(config);
 let users = [] ;
 let usersFiles = [] ;
 //let state = "loading" ;
+let d = new Date() ;
+
+let day = d.getDate();
+let month = d.getMonth() ; 
+let year = d.getFullYear() ;
+let hour = d.getHours() ;
+let minute = d.getMinutes() ;
+
+let dateText = year + '/' + month + '/' + day + ' | ' + hour + ':' + minute ;
+console.log("date : " + dateText) ;
+document.querySelector("#date").innerHTML = dateText ;
 
 let database = firebase.database() ;
 let ref = database.ref('views') ;
