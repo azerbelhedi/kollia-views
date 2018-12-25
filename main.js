@@ -18,11 +18,12 @@ let d = new Date() ;
 
 let day = d.getDate();
 let month = d.getMonth() ; 
-let year = d.getFullYear() ;
+let year = d.getFullYear() +1 ;
 let hour = d.getHours() ;
 let minute = d.getMinutes() ;
-
-let dateText = year + '/' + month + '/' + day + ' | ' + hour + ':' + minute ;
+let zero = "" ;
+if(minute < 10 ){zero = "0" ;}
+let dateText = year + '/' + month + '/' + day + ' | ' + hour + ':' + zero + minute ;
 console.log("date : " + dateText) ;
 document.querySelector("#date").innerHTML = dateText ;
 
