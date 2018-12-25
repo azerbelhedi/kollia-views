@@ -14,11 +14,20 @@
         <div class = "stats">
             <h2 id = "date"> date : </h2>
             <hr>
-            <h1 id = "views">views : loading</h1>
-            <h1 id = "files">files : loading</h1>
-            <h1 id = "users">users : loading</h1>
+            <button class = "statModeButton" onclick="showToday()">today</button>
+            <button class = "statModeButton" onclick="showAll()">all</button>
+            <div id = "allSection">
+                <h1 id = "views">views : loading</h1>
+                <h1 id = "files">files : loading</h1>
+                <h1 id = "users">users : loading</h1>
+            </div>
+            <div id = "todaySection">
+                <h1 id = "views2">views : +- loading</h1>
+                <h1 id = "files2">files : +- loading</h1>
+                <h1 id = "users2">users : +- loading</h1>
+            </div>
         </div>
-        
+        <hr>    
         <button id = "usersButton" onclick = "switchDisplay()">loading users</button>
     </center>
     <br>
@@ -31,5 +40,6 @@
 
 </body>
 <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+<script src = "today.js"></script>
 <script src="main.js"></script>
 </html>

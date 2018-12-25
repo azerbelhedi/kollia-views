@@ -10,9 +10,8 @@ var config = {
 };
 firebase.initializeApp(config);
 
-
 let users = [] ;
-let usersFiles = [] ;
+let usersFiles = [] ;views
 //let state = "loading" ;
 let d = new Date() ;
 
@@ -29,6 +28,16 @@ document.querySelector("#date").innerHTML = dateText ;
 
 let database = firebase.database() ;
 let ref = database.ref('views') ;
+
+const showToday = () => {
+    document.querySelector("#todaySection").style.display = "block" ;
+    document.querySelector("#allSection").style.display = "none" ;
+}
+
+const showAll = () => {
+    document.querySelector("#todaySection").style.display = "none" ;
+    document.querySelector("#allSection").style.display = "block" ;
+}
 
 const refresh = () => {
     location.reload() ;
@@ -89,9 +98,11 @@ const gotData = (data) => {
         views += data[x].value ;
     }) ;
     document.querySelector("#views").innerHTML = "views : " + (views - init) ;
+    //globalViews = views - init ;   
+    loadviews(views - init) ; 
     if(init > views){
         document.querySelector("#views").style.color = "red" ;
-    }    
+    }
 }
 
 const errData = (err) => {
@@ -106,6 +117,8 @@ const gotFiles = (data) => {
     let keys = Object.keys(data) ;
     document.querySelector("#files").innerHTML = "files : " + keys.length ;
     //alert("files : " + keys.length) ;
+    //globalFiles = keys.length ;
+    loadFiles(keys.length) ;
 }
 
 const errFiles = (error) => {
@@ -125,6 +138,9 @@ const gotUsers = (data) => {
     // wrtite data on arrays
     loadUsersData(data , keys) ;
     document.querySelector("#usersButton").innerHTML = "show users" ;
+    //globalUsers = keys.length ;
+    //callToday(globalFiles , globalUsers , globalViews) ;
+    loadUsers(keys.length) ;
 }
 
 usersRef.on('value' , gotUsers , errUsers) ;
