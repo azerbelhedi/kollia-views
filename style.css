@@ -1,0 +1,20 @@
+.sides{
+    display : flex ;
+    background-color: #4d848d ;
+    width :100%;
+    margin-left: auto ;
+    margin-right: auto ;
+    display: none ;
+}
+
+#names{
+    width :50%;
+}
+
+#filesList{
+    width :50%;
+}
+
+body{
+    background-color: #34656d ;
+}
