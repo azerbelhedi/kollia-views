@@ -1,5 +1,6 @@
 let datesList = [] ;
 let viewsList = [] ;
+
 let filesList = [] ;
 let usersList = [] ;
 let colorStateViews = 'green' ;
@@ -44,20 +45,23 @@ const errGraphView = (err) => {
 }
 
 const gotGraphView = (data) => {
+    // init 
+    datesList = [] ;
+    viewsList = [] ;
     data = data.val() ;
     let keys = Object.keys(data) ;
     let last = 0 ;
     let days = 0 ;
     keys.map(x => {
         days++ ;
-        //if(days < 8){
+        if(days < 8){
             let diff = data[x].views - last ;
             let localDate = data[x].year + "/" + data[x].month + "/" + data[x].day ;
             datesList.push(localDate) ;
             last = data[x].views ;
             console.log("totla view : " + diff) ;
             viewsList.push(diff) ;
-       // }        
+        }        
     })
     console.log(viewsList) ;
 
