@@ -14,6 +14,10 @@
         <div class = "stats">
             <h2 id = "date"> date : </h2>
             <hr>
+            <div class="chart-container" style="position :relative ; height:15vhpx; width:100%">
+                <canvas id="myChart"></canvas>
+            </div>
+            <hr>
             <button class = "statModeButton" onclick="showToday()">today</button>
             <button class = "statModeButton" onclick="showAll()">all</button>
             <div id = "allSection">
@@ -42,4 +46,6 @@
 <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
 <script src = "today.js"></script>
 <script src="main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+<script src = "graph.js"></script>
 </html>
