@@ -51,16 +51,20 @@ const gotGraphView = (data) => {
     data = data.val() ;
     let keys = Object.keys(data) ;
     let last = 0 ;
-    let days = 0 ;
+    let days = -1 ;
+    let startFrom = data[keys[keys.length - 1 ]].rank - 6 ;
+    console.log("alerta :: ! :: " + startFrom) ;
     keys.map(x => {
         days++ ;
-        if(days < 8){
+        if(true){
             let diff = data[x].views - last ;
             let localDate = data[x].year + "/" + data[x].month + "/" + data[x].day ;
-            datesList.push(localDate) ;
             last = data[x].views ;
             console.log("totla view : " + diff) ;
-            viewsList.push(diff) ;
+            if(days >= startFrom){
+                datesList.push(localDate) ;
+                viewsList.push(diff) ;
+            }
         }        
     })
     console.log(viewsList) ;
