@@ -43,7 +43,7 @@ body{
 }
 
 .stats{
-    margin-top:80px;
+    margin-top:10px;
 }
 
 .stats h1 , h2{
@@ -92,3 +92,43 @@ body{
     display :none;
 }
 
+.control-panel{
+    margin-top :80px;
+}
+
+.control-panel button{
+    color :red;
+    margin:0;
+    width: 49% ;
+    margin-top: 5px ;
+    background-color :#1c3a3f;
+    color :white;
+    border: none ;
+    height :32px;
+    font-weight: bold ;
+    font-family: 'Bree Serif', serif;
+    box-shadow: 2px 2px 5px black ;
+}
+
+.reports{
+    display: none ;
+}
+
+.reports-tab{
+    display: flex ;
+}
+
+#reportedFiles{
+    flex :4;
+    background-color: red ;
+}
+
+#n-reports{
+    flex :1;
+    background-color: green ;
+}
+
+#report-reason{
+    flex :2;
+    background-color: yellow ;
+}

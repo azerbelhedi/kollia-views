@@ -148,3 +148,12 @@ filesRef.on('value' , gotFiles , errFiles) ;
 ref.on('value' , gotData , errData) ;
 
 
+function switchToReports(){
+    document.getElementsByClassName("reports")[0].style.display = "inline" ;
+    document.getElementsByClassName("stats")[0].style.display = "none" ;
+}
+
+function switchToStats(){
+    document.getElementsByClassName("reports")[0].style.display = "none" ;
+    document.getElementsByClassName("stats")[0].style.display = "inline" ;
+}

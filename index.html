@@ -11,9 +11,13 @@
     <center>
         <h1 id = "title" onclick = "refresh()">kollia board </h1>
         <img  onclick = "refresh()" id = "logo" src = "kollia2.png">   
-        <div class = "stats">
+        <div class = "control-panel">
             <h2 id = "date"> date : </h2>
             <hr>
+            <button onclick = "switchToStats()">stats</button>
+            <button onclick = "switchToReports()">reports</button>
+        </div>
+        <div class = "stats">
             <div class="chart-container" style="position :relative ; height:15vhpx; width:100%">
                 <canvas id="myChart"></canvas>
             </div>
@@ -31,17 +35,26 @@
                 <h1 id = "files2">files : +- loading</h1>
                 <h1 id = "users2">users : +- loading</h1>
             </div>
+            <hr>    
+            <button id = "usersButton" onclick = "switchDisplay()">loading users</button>
         </div>
-        <hr>    
-        <button id = "usersButton" onclick = "switchDisplay()">loading users</button>
+        <div class="reports">
+            <h1> waiting reports</h1>
+                <div class = "reports-tab">
+                    <div id="reportedFiles">reportedFiles</div>
+                    <div id="n-reports">n*</div>
+                    <div id="report-reason">reason</div>
+                </div>
+        </div>
+
     </center>
     <br>
     <div id ="usersList">
-            <div class="sides">
-                <div id = "names">names</div>
-                <div id = "filesList">files</div>
-            </div>
+        <div class="sides">
+            <div id = "names">names</div>
+            <div id = "filesList">files</div>
         </div>
+    </div>
 
 </body>
 <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
@@ -50,4 +63,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
 <script src = "graph.js"></script>
 <script src = "average.js"></script>
+<script src = "reports.js"></script>
 </html>
