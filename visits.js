@@ -35,7 +35,7 @@ const gotVisits = (data) =>{
     });
     document.querySelector("#visits2").innerHTML = "today visits : " + todayVisits ;
     document.querySelector("#duration2").innerHTML = "today Duration : " +  todayDuration + "min";
-    //
+    // ** there was a failure on github page , i am  trying again to push  
 }
 
 visitsRef.on("value" , gotVisits , errVisits) ;
