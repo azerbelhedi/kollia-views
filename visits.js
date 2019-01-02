@@ -1,7 +1,10 @@
 console.log("visits js ready !") ;
 
+let first = 0 ;
 let visitsRef = database.ref("timer");
 let fullDuration = 0 ;
+let todayDuration ;
+let lastDuration ;
 
 let browserData = {
     appCodeName : navigator.appCodeName ,
@@ -17,7 +20,7 @@ const errVisits = (err) => {
 
 const gotVisits = (data) =>{
     let todayVisits = 0 ; 
-    let todayDuration = 0 ;
+    todayDuration = 0 ;
     fullDuration = 0 ;
     data = data.val() ;
     let keys = Object.keys(data) ;
@@ -43,7 +46,22 @@ const gotVisits = (data) =>{
     });
     document.querySelector("#visits2").innerHTML = "today visits : " + todayVisits ;
     document.querySelector("#duration2").innerHTML = "today Duration : " +  todayDuration + "min";
-    // ** there was a failure on github page , i am  trying again to push  // again
+    // ** there was a failure on github page , i am  trying again to push  // again 
+    if(first == 0){
+        first = 1 ;
+        lastDuration = todayDuration ;
+    }
+    
 }
 
 visitsRef.on("value" , gotVisits , errVisits) ;
+
+console.log("connections js ready !") ;
+
+const check = () => {
+    let connections = todayDuration - lastDuration ;
+    document.querySelector("#online").innerHTML = connections + " connection" ;
+    lastDuration = todayDuration ;
+}
+
+setInterval(check , 60000) ;
