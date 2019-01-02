@@ -8,6 +8,7 @@ const errVisits = (err) => {
 } 
 
 const gotVisits = (data) =>{
+    fullDuration = 0 ;
     data = data.val() ;
     let keys = Object.keys(data) ;
     //alert(keys.length) ;
