@@ -3,6 +3,14 @@ console.log("visits js ready !") ;
 let visitsRef = database.ref("timer");
 let fullDuration = 0 ;
 
+let browserData = {
+    appCodeName : navigator.appCodeName ,
+    appName : navigator.appName ,
+    product : navigator.product ,
+    userAgent : navigator.userAgent ,
+    platform : navigator.platform
+} ;
+
 const errVisits = (err) => {
     console.log("err : " + err) ;
 } 
@@ -35,7 +43,7 @@ const gotVisits = (data) =>{
     });
     document.querySelector("#visits2").innerHTML = "today visits : " + todayVisits ;
     document.querySelector("#duration2").innerHTML = "today Duration : " +  todayDuration + "min";
-    // ** there was a failure on github page , i am  trying again to push  
+    // ** there was a failure on github page , i am  trying again to push  // again
 }
 
 visitsRef.on("value" , gotVisits , errVisits) ;
