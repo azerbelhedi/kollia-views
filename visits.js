@@ -5,6 +5,7 @@ let visitsRef = database.ref("timer");
 let fullDuration = 0 ;
 let todayDuration ;
 let lastDuration ;
+let seconds = 0 ;
 
 let browserData = {
     appCodeName : navigator.appCodeName ,
@@ -60,8 +61,18 @@ console.log("connections js ready !") ;
 
 const check = () => {
     let connections = todayDuration - lastDuration ;
-    document.querySelector("#online").innerHTML = connections + " connection" ;
+    document.querySelector("#online").innerHTML = connections + " connection(s)" ;
     lastDuration = todayDuration ;
 }
 
 setInterval(check , 60000) ;
+
+const counter = () => {
+    seconds-- ;
+    if(seconds < 0){
+        seconds = 59;
+    }
+    document.querySelector("#count").innerHTML = "(" + seconds + ")" ;
+}
+
+setInterval(counter , 1000) ;
