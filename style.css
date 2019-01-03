@@ -132,3 +132,10 @@ body{
     flex :2;
     background-color: yellow ;
 }
+
+.reportList{
+    overflow: hidden;
+    background-color: grey ;
+    height: 25px ;
+    margin:2px;
+}
